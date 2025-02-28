@@ -8,7 +8,7 @@
 
 
 body {
-    background-color: black;
+    background-color: #16161a;
     height: 100vh;
 }
 
@@ -16,6 +16,44 @@ body {
     max-width: 1280px;
     margin: 0 auto;
 
+}
+
+.flex {
+    display: flex;
+}
+
+:root {
+    --color-primary: #7f5af0;
+    --color-secondary: #94a1b2;
+    --color-tertiary: #fffffe;
+    --color-quaternary: #5c5c5c;
+    --color-quinary: #16161a;
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--color-primary);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    box-shadow: 0px 0px 8px var(--color-primary);
+    transform: scale(1.05);
+}
+
+h2.titulo {
+    font-size: 38px;
+    color: var(--color-tertiary);
+    text-align: center;
+}
+
+h2.titulo span {
+    color: var(--color-primary);
 }
 
 /* Estilo do cabeçario */
@@ -30,15 +68,16 @@ header>.interface {
     justify-content: space-between;
 }
 
+
 header a {
-    color: #5c5c5c;
+    color: var(--color-quaternary);
     text-decoration: none;
     display: inline-block;
     transition: .3s;
 }
 
 header a:hover {
-    color: #fff;
+    color: var(--color-tertiary);
     transform: scale(1.05);
 }
 
@@ -51,16 +90,176 @@ header nav ul li {
     padding: 0 40px;
 }
 
-header .btn-contato button {
-    padding: 10px 40px;
-    font-size: 18px;
-    font-weight: 600;
-    background-color: #ff6e4a;
-    border: 0;
-    border-radius: 30px;
-    cursor: pointer;
+
+/*  ESTILO TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
 }
 
-header .btn-contato button:hover {
-    box-shadow: 0px 0px 8px #ff6e4a;
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    font-size: 48px;
+    color: var(--color-tertiary);
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: var(--color-primary);
+}
+
+.topo-do-site .txt-topo-site p {
+    color: var(--color-secondary);
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    filter: drop-shadow(3px 5px 5px var(--color-primary));
+
+
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+/* Estilo especialidades */
+section.especialidades {
+    padding: 40px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: var(--color-tertiary);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    margin-top: 40px;
+    transition: .3s;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--color-primary);
+
+}
+
+.especialidades .especialidades-box i {
+    font-size: 70px;
+    color: var(--color-primary);
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE */
+section.sobre {
+    padding: 80px 4%;
+}
+
+section .sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: var(--color-tertiary);
+
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: var(--color-primary);
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre .txt-sobre .btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-primary);
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0px 5px;
+    transition: .3s;
+}
+
+/* estilo portfólio */
+section.portfolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px var(--color-quaternary);
+
+}
+
+section.portfolio .flex {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+
+}
+
+.img-port {
+    width: 30%;
+    height: 360px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 2s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #16161aad;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-tertiary);
+    opacity: 0;
+    transition: .2s;
+}
+
+.overlay:hover {
+    opacity: 1;
 }
