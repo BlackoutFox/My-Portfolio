@@ -211,6 +211,98 @@
                     </div>
                 </div>
             </section>
+            <section class="formulario">
+                <div class="interface">
+                    <h2 class="titulo">
+                        ENTRE EM CONTATO
+                        <span
+                            >COMIGO<i class="bi bi-arrow-down-short"></i
+                        ></span>
+                    </h2>
+                    <form action="../backend/backemail.php" method="post">
+                        <!-- <label for="nome">Nome</label> -->
+                        <input
+                            type="text"
+                            name="nome"
+                            id="nome"
+                            placeholder="Seu nome:"
+                            required
+                        />
+
+                        <!-- <label for="email">Email</label> -->
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Seu e-mail:"
+                            required
+                        />
+                        <!-- <label for="text">Celular</label> -->
+                        <input
+                            type="phonenumber"
+                            name="telefone"
+                            id="telefone"
+                            placeholder="Seu celular:"
+                        />
+
+                        <!-- <label for="mensagem">Mensagem</label> -->
+                        <textarea
+                            name="mensagem"
+                            id="mensagem"
+                            placeholder="Sua mensagem:"
+                            required
+                        ></textarea>
+                        <div class="btn-enviar">
+                            <input type="submit" value="ENVIAR" />
+                        </div>
+                    </form>
+                </div>
+            </section>
         </main>
+        <footer>
+            <div class="interface">
+                <div class="line-footer">
+                    <div class="flex">
+                        <div class="logo-footer">
+                            <img
+                                src="../static/img/logo.png"
+                                alt="Logo do Portfólio"
+                            />
+                        </div>
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/p.petters/"
+                                ><button>
+                                    <i class="bi bi-instagram"></i></button
+                            ></a>
+                            <a href="https://www.linkedin.com/in/pettersantos/"
+                                ><button>
+                                    <i class="bi bi-linkedin"></i></button
+                            ></a>
+                            <a href="https://discord.gg/tvn7fncw"
+                                ><button>
+                                    <i class="bi bi-discord"></i></button
+                            ></a>
+                            <a href="https://github.com/BlackoutFox"
+                                ><button>
+                                    <i class="bi bi-github"></i></button
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Parte de baixo do footer -->
+                <div class="line-footer borda">
+                    <p>
+                        <i class="bi bi-envelope-at-fill"></i>
+                        <a href="mailto:petter.santos@outlook.com.br"
+                            >petter.santos@outlook.com.br</a
+                        >
+                    </p>
+                    <p class="copy">
+                        &copy; 2025 - Todos os direitos reservados -
+                        Desenvolvido por Petter Santos
+                    </p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

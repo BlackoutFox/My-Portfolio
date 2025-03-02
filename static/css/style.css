@@ -10,6 +10,8 @@
 body {
     background-color: #16161a;
     height: 100vh;
+    padding-top: 70px;
+
 }
 
 .interface {
@@ -28,6 +30,7 @@ body {
     --color-tertiary: #fffffe;
     --color-quaternary: #5c5c5c;
     --color-quinary: #16161a;
+    --color-sextary: #242629;
 }
 
 .btn-contato button {
@@ -41,7 +44,8 @@ body {
     transition: .3s;
 }
 
-button:hover {
+button:hover,
+form .btn-enviar input:hover {
     box-shadow: 0px 0px 8px var(--color-primary);
     transform: scale(1.05);
 }
@@ -59,7 +63,6 @@ h2.titulo span {
 /* Estilo do cabeçario */
 header {
     padding: 40px 4%;
-
 }
 
 header>.interface {
@@ -92,6 +95,8 @@ header nav ul li {
 
 
 /*  ESTILO TOPO DO SITE */
+
+
 section.topo-do-site {
     padding: 40px 4%;
 }
@@ -200,7 +205,7 @@ section .sobre .flex {
     text-align: justify;
 }
 
-.sobre .txt-sobre .btn-social button {
+.btn-social button {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -215,7 +220,8 @@ section .sobre .flex {
 /* estilo portfólio */
 section.portfolio {
     padding: 80px 4%;
-    box-shadow: 0 0 40px 10px var(--color-quaternary);
+    box-shadow: 0 0 40px 10px var(--color-sextary);
+    background-color: var(--color-quinary);
 
 }
 
@@ -262,4 +268,185 @@ section.portfolio .flex {
 
 .overlay:hover {
     opacity: 1;
+}
+
+/* ESTILO FORMULÁRIO */
+section.formulario {
+    padding: 80px 4%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 20px 15px;
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    background-color: var(--color-quinary);
+    color: var(--color-tertiary);
+    outline: 0;
+    font-size: 18px;
+}
+
+form textarea {
+    resize: none;
+    max-height: 300px;
+}
+
+form input::placeholder {
+    color: var(--color-secondary);
+}
+
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+form .btn-enviar input {
+    width: 120px;
+    background-color: var(--color-primary);
+    color: var(--color-quinary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* estilo do rodapé */
+footer {
+    padding: 60px 4%;
+    background-color: var(--color-quinary);
+    box-shadow: 0 0 40px 10px var(--color-sextary);
+    color: var(--color-tertiary);
+
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+
+}
+
+.borda {
+    border-top: 2px solid var(--color-primary);
+    width: 100%;
+}
+
+footer .line-footer p i {
+    color: var(--color-primary);
+    font-size: 20px;
+}
+
+footer .line-footer p a {
+    color: var(--color-tertiary);
+
+}
+
+footer .copy {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* responsividade */
+@media screen and (max-width: 1020px) {
+
+    /* calsses gerais */
+    .flex {
+        flex-direction: column;
+    }
+
+    h2.titulo {
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column-reverse;
+    }
+
+    /* cabeçalho */
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+    }
+
+    /* topo do site */
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+
+    /* Estilo especialidades */
+    section.especialidades {
+        padding: 40px 8%;
+    }
+
+    /* ESTILO DO SOBRE */
+    section.sobre {
+        padding: 80px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .btn-social {
+        text-align: center;
+    }
+
+    .img-sobre img {
+        width: 100%;
+    }
+
+    /* estilo portfólio */
+    section.portfolio {
+        padding: 80px 8%;
+    }
+
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    section.portfolio .flex {
+        gap: 60px;
+    }
+
+    /* restilo rodapé */
+    footer .flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer .line-footer {
+        text-align: center;
+    }
 }
