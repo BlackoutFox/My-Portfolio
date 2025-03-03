@@ -16,18 +16,27 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
-        <!-- FIM
-         -->
+        <!--FIM-->
+        <script src="../static/js/script.js" defer></script>
+
         <link rel="stylesheet" href="../static/css/style.css" />
+        <head>
+            <link
+                rel="icon"
+                href="../static/img/icon-web.png"
+                type="image/x-icon"
+            />
+        </head>
+
         <title>Portfólio</title>
     </head>
-    <body>
+    <body id="body">
         <header>
             <div class="interface">
                 <div class="logo">
                     <a href="#" class="" id="">
                         <img
-                            src="../static/img/logo.png"
+                            src="../static/img/raposa-photo-logo.png"
                             alt="Logo do Portfólio"
                         />
                     </a>
@@ -35,41 +44,67 @@
                 <!--Logo-->
                 <nav class="menu-desktop">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Projetos</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="#body">Home</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#portfolio">Projetos</a></li>
                     </ul>
                 </nav>
                 <div class="btn-contato">
-                    <a href="">
+                    <a href="#formulario">
                         <button>Contato</button>
                     </a>
                 </div>
                 <!--btn-contato-->
+                <div class="btn-abrir-menu" id="btn-menu">
+                    <i class="bi bi-list-nested"></i>
+                </div>
+                <!--btn-abrir-menu-->
+                <div class="menu-mobile" id="menu-mobile">
+                    <div class="btn-fechar"><i class="bi bi-x-lg"></i></div>
+                    <nav>
+                        <ul>
+                            <li><a href="#body">Home</a></li>
+                            <li>
+                                <a href="#especialidades">Especialidades</a>
+                            </li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#portfolio">Projetos</a></li>
+                            <li><a href="#formulario">Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--menu-mobile-->
+                <div class="overlay-menu" id="overlay-menu"></div>
             </div>
             <!--Interface-->
         </header>
-
         <main>
-            <section class="topo-do-site">
+            <section class="topo-do-site" id="topo-do-site">
                 <div class="interface">
                     <div class="flex">
                         <div class="txt-topo-site">
                             <h1>
-                                TESTE DE TEXTO DO MEU PORTFÓLIO<span>.</span>
+                                TRANSFORMANDO <span>IDEIAS</span> EM
+                                <span>CÓDIGO</span> E
+                                <span
+                                    >INOVAÇÃO.<i class="bi bi-stars"></i
+                                ></span>
                             </h1>
                             <p>
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Vero aliquam non debitis fugit
-                                dignissimos, quibusdam veniam provident
-                                doloribus quos vitae quasi dolorem fugiat hic
-                                aspernatur nesciunt laboriosam distinctio modi
-                                sapiente!
+                                Seja bem-vindo ao meu portfólio! Aqui, você
+                                encontrará projetos que refletem meu compromisso
+                                com a tecnologia e meu desejo de criar soluções
+                                inteligentes. (Ou só expressar minha
+                                criatividade rs.) Além disso, conhecer um pouco
+                                mais sobre o desenvolvedor que sou! ;)
                             </p>
                             <div class="btn-contato">
-                                <a href="#">
-                                    <button>Entre em contato</button>
+                                <a href="#formulario">
+                                    <button>
+                                        Entre em contato
+                                        <i class="bi bi-send"></i>
+                                    </button>
                                 </a>
                             </div>
                         </div>
@@ -82,50 +117,62 @@
                     </div>
                 </div>
             </section>
-            <section class="especialidades">
+            <section class="especialidades" id="especialidades">
                 <div class="interface">
-                    <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                    <h2 class="titulo">
+                        MINHAS
+                        <span
+                            >ESPECIALIDADES. <i class="bi bi-laptop"></i
+                        ></span>
+                    </h2>
                     <div class="flex">
                         <div class="especialidades-box">
-                            <i class="bi bi-code-slash"></i>
-                            <h3>Website</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Cupiditate, quidem ad
-                                necessitatibus quisquam accusamus ratione magni
-                                culpa natus maiores perspiciatis? Corrupti animi
-                                magni ratione, accusantium perferendis pariatur
-                                reiciendis blanditiis sunt.
-                            </p>
+                            <!-- <i class="bi bi-filetype-html"></i> -->
+                            <img
+                                src="../static/img/html-5.png"
+                                alt="imagem html"
+                            />
+                            <h3>HTML5</h3>
+                            <!-- <p>Descrição</p> -->
                         </div>
                         <div class="especialidades-box">
-                            <i class="bi bi-code"></i>
-                            <h3>Loja online</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Cupiditate, quidem ad
-                                necessitatibus quisquam accusamus ratione magni
-                                culpa natus maiores perspiciatis? Corrupti animi
-                                magni ratione, accusantium perferendis pariatur
-                                reiciendis blanditiis sunt.
-                            </p>
+                            <!-- <i class="bi bi-code"></i> -->
+                            <img
+                                src="../static/img/css-3.png"
+                                alt="imagem css"
+                            />
+                            <h3>CSS3</h3>
+                            <!-- <p>Descrição</p> -->
+                        </div>
+
+                        <div class="especialidades-box">
+                            <!-- <i class="bi bi-browser-chrome"></i> -->
+                            <img
+                                src="../static/img/python.png"
+                                alt="imagem python"
+                            />
+                            <h3>PYTHON</h3>
+                            <!-- <p>Descrição</p> -->
                         </div>
                         <div class="especialidades-box">
-                            <i class="bi bi-browser-chrome"></i>
-                            <h3>WEB</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Cupiditate, quidem ad
-                                necessitatibus quisquam accusamus ratione magni
-                                culpa natus maiores perspiciatis? Corrupti animi
-                                magni ratione, accusantium perferendis pariatur
-                                reiciendis blanditiis sunt.
-                            </p>
+                            <!-- <i class="bi bi-browser-chrome"></i> -->
+                            <img
+                                src="../static/img/kotlin.png"
+                                alt="imagem kotlin"
+                            />
+                            <h3>KOTLIN</h3>
+                            <!-- <p>Descrição</p> -->
+                        </div>
+                        <div class="especialidades-box">
+                            <!-- <i class="bi bi-browser-chrome"></i> -->
+                            <img src="../static/img/c.png" alt="imagem c#" />
+                            <h3>C#</h3>
+                            <!-- <p>Descrição</p> -->
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="sobre">
+            <section class="sobre" id="sobre">
                 <div class="interface">
                     <div class="flex">
                         <div class="img-sobre">
@@ -137,20 +184,21 @@
                                 <span>SOU PETTER SANTOS.</span>
                             </h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quidem provident,
-                                reprehenderit iste maiores blanditiis, iusto
-                                sapiente aliquam vitae ducimus impedit dolore
-                                voluptatum facilis asperiores. Alias molestiae
-                                quo minus consequatur pariatur!
+                                Atualmente, curso Bacharelado em Engenharia de
+                                Software na Universidade Anhanguera - UNIDERP e,
+                                paralelamente, realizo formações em
+                                Desenvolvimento Web (Udemy) e Inteligência
+                                Artificial Aplicada a Dados com Copilot
+                                (DIO.me). Tenho experiência com HTML, CSS,
+                                Python, MySQL e Kotlin, além do uso de ambientes
+                                de desenvolvimento como Android Studio, Visual
+                                Studio Code e GitHub.
                             </p>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Eaque nobis vel amet magnam
-                                voluptatem molestiae tenetur consequuntur
-                                dolorem nostrum ex quam explicabo expedita eum,
-                                eius harum. Cupiditate dicta quaerat
-                                exercitationem.
+                                Já atuei no desenvolvimento em equipe por meio
+                                de um programa de iniciação científica na UFRBA,
+                                onde colaboramos na criação de um aplicativo
+                                voltado para trabalhadores autônomos.
                             </p>
                             <div class="btn-social">
                                 <a href="https://www.instagram.com/p.petters/"
@@ -175,7 +223,7 @@
                     </div>
                 </div>
             </section>
-            <section class="portfolio">
+            <section class="portfolio" id="portfolio">
                 <div class="interface">
                     <h2 class="titulo">
                         MEU
@@ -183,35 +231,87 @@
                             >PORTFÓLIO<i class="bi bi-arrow-down-short"></i
                         ></span>
                     </h2>
-                    <div class="flex">
-                        <div
-                            class="img-port"
-                            style="
-                                background-image: url('../static/img/web\ test.jpg');
-                            "
-                        >
-                            <div class="overlay">Projeto test</div>
+                    <div class="portfolio-container">
+                        <div class="portfolio-scroll" id="portfolio-scroll">
+                            <div
+                                class="img-port"
+                                style="
+                                    background-image: url('../static/img/web test.jpg');
+                                "
+                            >
+                                <div class="overlay">Projeto test</div>
+                            </div>
+                            <div
+                                class="img-port"
+                                style="
+                                    background-image: url('../static/img/web test.jpg');
+                                "
+                            >
+                                <div class="overlay">Projeto test2</div>
+                            </div>
+                            <div
+                                class="img-port"
+                                style="
+                                    background-image: url('../static/img/web test.jpg');
+                                "
+                            >
+                                <div class="overlay">Projeto test3</div>
+                            </div>
+                            <div
+                                class="img-port"
+                                style="
+                                    background-image: url('../static/img/web test.jpg');
+                                "
+                            >
+                                <div class="overlay">Projeto test4</div>
+                            </div>
+                            <div
+                                class="img-port"
+                                style="
+                                    background-image: url('../static/img/web test.jpg');
+                                "
+                            >
+                                <div class="overlay">Projeto test5</div>
+                            </div>
+                            <div
+                                class="img-port"
+                                style="
+                                    background-image: url('../static/img/web test.jpg');
+                                "
+                            >
+                                <div class="overlay">Projeto test6</div>
+                            </div>
                         </div>
-                        <div
-                            class="img-port"
-                            style="
-                                background-image: url('../static/img/web\ test.jpg');
-                            "
-                        >
-                            <div class="overlay">Projeto test2</div>
-                        </div>
-                        <div
-                            class="img-port"
-                            style="
-                                background-image: url('../static/img/web\ test.jpg');
-                            "
-                        >
-                            <div class="overlay">Projeto test3</div>
+                        <div class="pagination">
+                            <span
+                                class="dot"
+                                onclick="scrollToProject(0)"
+                            ></span>
+                            <span
+                                class="dot"
+                                onclick="scrollToProject(1)"
+                            ></span>
+                            <span
+                                class="dot"
+                                onclick="scrollToProject(2)"
+                            ></span>
+                            <span
+                                class="dot"
+                                onclick="scrollToProject(3)"
+                            ></span>
+                            <span
+                                class="dot"
+                                onclick="scrollToProject(4)"
+                            ></span>
+                            <span
+                                class="dot"
+                                onclick="scrollToProject(5)"
+                            ></span>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="formulario">
+            <section class="formulario" id="formulario">
                 <div class="interface">
                     <h2 class="titulo">
                         ENTRE EM CONTATO
@@ -259,13 +359,13 @@
                 </div>
             </section>
         </main>
-        <footer>
+        <footer id="footer">
             <div class="interface">
                 <div class="line-footer">
                     <div class="flex">
                         <div class="logo-footer">
                             <img
-                                src="../static/img/logo.png"
+                                src="../static/img/raposa-photo-logo.png"
                                 alt="Logo do Portfólio"
                             />
                         </div>
@@ -290,7 +390,7 @@
                     </div>
                 </div>
                 <!-- Parte de baixo do footer -->
-                <div class="line-footer borda">
+                <div class="line-footer">
                     <p>
                         <i class="bi bi-envelope-at-fill"></i>
                         <a href="mailto:petter.santos@outlook.com.br"

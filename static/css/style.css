@@ -4,13 +4,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 
 body {
     background-color: #16161a;
     height: 100vh;
-    padding-top: 70px;
+    padding-top: 200px;
 
 }
 
@@ -62,7 +63,13 @@ h2.titulo span {
 
 /* Estilo do cabeçario */
 header {
-    padding: 40px 4%;
+    padding: 20px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(22, 22, 26, 0.9);
 }
 
 header>.interface {
@@ -79,7 +86,7 @@ header a {
     transition: .3s;
 }
 
-header a:hover {
+header nav.menu-desktop a:hover {
     color: var(--color-tertiary);
     transform: scale(1.05);
 }
@@ -88,9 +95,81 @@ header nav ul {
     list-style-type: none;
 }
 
-header nav ul li {
+header nav.menu-desktop ul li {
     display: inline-block;
     padding: 0 40px;
+}
+
+/* estilo do menu mobile */
+.btn-abrir-menu i {
+    color: var(--color-primary);
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.btn-abrir-menu {
+    display: none;
+}
+
+.menu-mobile {
+    height: 100vh;
+    background-color: var(--color-quinary);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu {
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu~.overlay-menu {
+    display: block;
+}
+
+.menu-mobile .btn-fechar {
+
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i {
+    color: var(--color-primary);
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.menu-mobile nav ul {
+    text-align: right;
+}
+
+.menu-mobile nav ul li a {
+    color: var(--color-tertiary);
+    font-size: 20px;
+    font-weight: 300px;
+    padding: 20px 8%;
+    display: block;
+
+}
+
+.menu-mobile nav ul li a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-quinary);
+}
+
+.overlay-menu {
+    background-color: #16161a62;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
 }
 
 
@@ -113,6 +192,7 @@ section.topo-do-site .flex {
     line-height: 40px;
 }
 
+
 .topo-do-site .txt-topo-site h1 span {
     color: var(--color-primary);
 }
@@ -120,12 +200,13 @@ section.topo-do-site .flex {
 .topo-do-site .txt-topo-site p {
     color: var(--color-secondary);
     margin: 40px 0;
+    text-align: justify;
 }
 
 .topo-do-site .img-topo-site img {
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
-    filter: drop-shadow(3px 5px 5px var(--color-primary));
+    filter: drop-shadow(5px 10px 10px var(--color-primary));
 
 
 }
@@ -146,12 +227,14 @@ section.especialidades {
 }
 
 section.especialidades .flex {
-    gap: 60px;
+    gap: 40px;
+    justify-content: center;
 }
 
 .especialidades .especialidades-box {
+    justify-items: center;
     color: var(--color-tertiary);
-    padding: 40px;
+    padding: 10px;
     border-radius: 20px;
     border: 2px solid var(--color-primary);
     margin-top: 40px;
@@ -164,14 +247,15 @@ section.especialidades .flex {
 
 }
 
-.especialidades .especialidades-box i {
+/* .especialidades .especialidades-box i {
     font-size: 70px;
     color: var(--color-primary);
-}
+} */
 
 .especialidades .especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
+
 }
 
 /* ESTILO DO SOBRE */
@@ -222,30 +306,31 @@ section.portfolio {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px var(--color-sextary);
     background-color: var(--color-quinary);
-
 }
 
-section.portfolio .flex {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 60px;
+.portfolio-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
 
+.portfolio-scroll {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
 }
 
 .img-port {
-    width: 30%;
+    width: 300px;
     height: 360px;
     background-size: cover;
-    background-position: 100% 0%;
-    transition: 2s;
+    background-position: center;
     cursor: pointer;
     border-radius: 40px;
     position: relative;
-
-}
-
-.img-port:hover {
-    background-position: 100% 100%;
+    flex: 0 0 300px;
 }
 
 .overlay {
@@ -263,11 +348,32 @@ section.portfolio .flex {
     font-weight: 500;
     color: var(--color-tertiary);
     opacity: 0;
-    transition: .2s;
+    transition: opacity .2s;
 }
 
-.overlay:hover {
+.img-port:hover .overlay {
     opacity: 1;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background-color: var(--color-sextary);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: var(--color-primary);
 }
 
 /* ESTILO FORMULÁRIO */
@@ -360,16 +466,34 @@ footer .copy {
     margin-top: 40px;
 }
 
-/* responsividade */
+/* RESPONSIVIDADE */
 @media screen and (max-width: 1020px) {
 
-    /* calsses gerais */
+    /* ESTILO DE MENU MOBILE */
+    .btn-abrir-menu {
+        display: block;
+    }
+
+    .menu-mobile {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        /* Garante que ocupe toda a tela */
+    }
+
+    header {
+        padding: 15px 4%;
+        /* Reduz o espaço em telas menores */
+    }
+
+    /* CLASSES GERAIS */
     .flex {
         flex-direction: column;
     }
 
     h2.titulo {
-        font-size: 34px;
+        font-size: 30px;
         line-height: 30px;
     }
 
@@ -377,13 +501,13 @@ footer .copy {
         flex-direction: column-reverse;
     }
 
-    /* cabeçalho */
+    /* CABEÇALHO*/
     .menu-desktop,
     .btn-contato {
         display: none;
     }
 
-    /* topo do site */
+    /* TOPO DO SITE */
     section.topo-do-site .flex {
         gap: 40px;
     }
@@ -401,9 +525,25 @@ footer .copy {
         width: 100%;
     }
 
-    /* Estilo especialidades */
+    /* ESTILO ESPECIALIDADES */
     section.especialidades {
-        padding: 40px 8%;
+        padding: 10px 10%;
+
+    }
+
+    .especialidades .especialidades-box {
+        margin-top: 15px;
+    }
+
+    .especialidades .especialidades-box h3 {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+
+    .especialidades .especialidades-box img {
+        margin-left: 25%;
+        width: 50%;
+        height: 50%;
     }
 
     /* ESTILO DO SOBRE */
@@ -425,7 +565,7 @@ footer .copy {
         width: 100%;
     }
 
-    /* estilo portfólio */
+    /* ESTILO PORTFÓLIO */
     section.portfolio {
         padding: 80px 8%;
     }
@@ -440,7 +580,7 @@ footer .copy {
         gap: 60px;
     }
 
-    /* restilo rodapé */
+    /* ESTILO RODAPÉ */
     footer .flex {
         flex-direction: column;
         gap: 20px;
