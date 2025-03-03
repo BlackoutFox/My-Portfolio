@@ -7,18 +7,15 @@
     scroll-behavior: smooth;
 }
 
-
 body {
     background-color: #16161a;
     height: 100vh;
     padding-top: 200px;
-
 }
 
 .interface {
     max-width: 1280px;
     margin: 0 auto;
-
 }
 
 .flex {
@@ -140,7 +137,6 @@ header nav.menu-desktop ul li {
     color: var(--color-primary);
     font-size: 30px;
     cursor: pointer;
-
 }
 
 .menu-mobile nav ul {
@@ -153,7 +149,6 @@ header nav.menu-desktop ul li {
     font-weight: 300px;
     padding: 20px 8%;
     display: block;
-
 }
 
 .menu-mobile nav ul li a:hover {
@@ -207,8 +202,6 @@ section.topo-do-site .flex {
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
     filter: drop-shadow(5px 10px 10px var(--color-primary));
-
-
 }
 
 @keyframes flutuar {
@@ -244,7 +237,6 @@ section.especialidades .flex {
 .especialidades .especialidades-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px var(--color-primary);
-
 }
 
 /* .especialidades .especialidades-box i {
@@ -255,7 +247,6 @@ section.especialidades .flex {
 .especialidades .especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
-
 }
 
 /* ESTILO DO SOBRE */
@@ -270,7 +261,6 @@ section .sobre .flex {
 
 .sobre .txt-sobre {
     color: var(--color-tertiary);
-
 }
 
 .sobre .txt-sobre h2 {
@@ -322,37 +312,28 @@ section.portfolio {
     transition: transform 0.5s ease-in-out;
 }
 
-.img-port {
-    width: 300px;
-    height: 360px;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    border-radius: 40px;
-    position: relative;
-    flex: 0 0 300px;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #16161aad;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 500;
+.projeto-box {
+    justify-items: center;
     color: var(--color-tertiary);
-    opacity: 0;
-    transition: opacity .2s;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    margin-top: 40px;
+    transition: .3s;
+    width: 300px;
+    text-align: justify;
+    font-size: 15px;
+    cursor: pointer;
 }
 
-.img-port:hover .overlay {
-    opacity: 1;
+.projeto-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+.projeto-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
 }
 
 .pagination {
@@ -389,7 +370,6 @@ form {
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-
 }
 
 form input,
@@ -416,7 +396,6 @@ form input::placeholder {
 form .btn-enviar {
     margin-top: 20px;
     text-align: center;
-
 }
 
 form .btn-enviar input {
@@ -434,7 +413,6 @@ footer {
     background-color: var(--color-quinary);
     box-shadow: 0 0 40px 10px var(--color-sextary);
     color: var(--color-tertiary);
-
 }
 
 footer .flex {
@@ -443,7 +421,6 @@ footer .flex {
 
 footer .line-footer {
     padding: 20px 0;
-
 }
 
 .borda {

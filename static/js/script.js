@@ -15,7 +15,7 @@ overlay.addEventListener("click", () => {
 });
 let currentIndex = 0;
 const scrollContainer = document.getElementById("portfolio-scroll");
-const projects = document.querySelectorAll(".img-port");
+const projects = document.querySelectorAll(".projeto-box");
 const dots = document.querySelectorAll(".dot");
 const projectWidth = projects[0].offsetWidth + 20;
 const totalProjects = projects.length;
@@ -32,12 +32,11 @@ function updatePagination() {
 }
 
 function scrollToProject(index) {
-    scrollContainer.style.transition = "transform 0.5s ease-in-out";
+    scrollContainer.style.transition = "transform 0.3s ease-in-out";
     scrollContainer.style.transform = `translateX(${-index * projectWidth}px)`;
     currentIndex = index;
     updatePagination();
 }
-
 function autoScroll() {
     currentIndex++;
     scrollToProject(currentIndex);
@@ -51,6 +50,5 @@ function autoScroll() {
         }, 500);
     }
 }
-
 setInterval(autoScroll, 3000);
 updatePagination();
