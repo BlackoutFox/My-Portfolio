@@ -336,6 +336,10 @@ section.portfolio {
     margin: 15px 0;
 }
 
+.projeto-box span {
+    color: var(--color-primary);
+}
+
 .pagination {
     display: flex;
     justify-content: center;
