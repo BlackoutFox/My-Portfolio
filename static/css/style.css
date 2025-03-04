@@ -340,6 +340,13 @@ section.portfolio {
     color: var(--color-primary);
 }
 
+.projeto-box img {
+    margin-top: 10px;
+    width: 80px;
+    height: auto;
+    justify-content: space-between;
+}
+
 .pagination {
     display: flex;
     justify-content: center;
