@@ -50,5 +50,5 @@ function autoScroll() {
         }, 500);
     }
 }
-setInterval(autoScroll, 10000);
+setInterval(autoScroll, 9000);
 updatePagination();
