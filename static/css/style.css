@@ -8,9 +8,22 @@
 }
 
 body {
-    background-color: #16161a;
-    height: 100vh;
-    padding-top: 200px;
+    background: #16161a;
+    min-height: 100vh;
+    padding-top: 100px;
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+/* Fundo de partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
 }
 
 .interface {
@@ -52,6 +65,7 @@ h2.titulo {
     font-size: 38px;
     color: var(--color-tertiary);
     text-align: center;
+    margin-bottom: 40px;
 }
 
 h2.titulo span {
@@ -217,26 +231,36 @@ section.topo-do-site .flex {
 /* Estilo especialidades */
 section.especialidades {
     padding: 40px 4%;
+    width: 100%;
+    height: auto;
 }
 
 section.especialidades .flex {
     gap: 40px;
     justify-content: center;
+
 }
 
 .especialidades .especialidades-box {
-    justify-items: center;
     color: var(--color-tertiary);
-    padding: 10px;
     border-radius: 20px;
-    border: 2px solid var(--color-primary);
-    margin-top: 40px;
-    transition: .3s;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 180px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.especialidades-box img {
+    width: 70px;
+    margin: 0 auto 15px;
 }
 
 .especialidades .especialidades-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary);
 }
 
 /* .especialidades .especialidades-box i {
@@ -246,7 +270,13 @@ section.especialidades .flex {
 
 .especialidades .especialidades-box h3 {
     font-size: 28px;
-    margin: 15px 0;
+    text-align: center;
+
+}
+
+.especialidades-box img {
+    width: 70px;
+    margin: 0 auto 15px;
 }
 
 /* ESTILO DO SOBRE */
@@ -293,79 +323,134 @@ section .sobre .flex {
 
 /* estilo portfólio */
 section.portfolio {
-    padding: 80px 4%;
+    padding: 50px 4%;
     box-shadow: 0 0 40px 10px var(--color-sextary);
     background-color: var(--color-quinary);
 }
 
-.portfolio-container {
-    overflow: hidden;
+.text-mobile {
+    display: none;
+}
+
+.flip-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.flip-card {
+    background: transparent;
+    width: 100%;
+    height: 350px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
     position: relative;
     width: 100%;
-}
-
-.portfolio-scroll {
-    display: flex;
-    gap: 20px;
-    padding: 20px 0;
-    width: max-content;
-    transition: transform 0.5s ease-in-out;
-}
-
-.projeto-box {
-    justify-items: center;
-    color: var(--color-tertiary);
-    padding: 10px;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    border: 2px solid var(--color-primary);
-    margin-top: 40px;
-    transition: .3s;
-    width: 300px;
-    text-align: justify;
-    font-size: 15px;
-    cursor: pointer;
 }
 
-.projeto-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px var(--color-primary);
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
 }
 
-.projeto-box h3 {
-    font-size: 28px;
-    margin: 15px 0;
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    text-align: center;
 }
 
-.projeto-box span {
+.flip-card-front {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flip-card-front h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
     color: var(--color-primary);
 }
 
-.projeto-box img {
-    margin-top: 10px;
-    width: 80px;
-    height: auto;
+.flip-card-front img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 15px 10px;
+}
+
+.flip-card-front p {
+    color: var(--color-secondary);
+}
+
+.flip-card-back {
+    background: rgba(127, 90, 240, 0.9);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-.pagination {
+.flip-card-back h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.flip-card-back p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tech-badges {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    gap: 5px;
+    margin: 10px 0;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    margin: 5px;
-    background-color: var(--color-sextary);
-    border-radius: 50%;
-    display: inline-block;
+.tech-badges img {
+    height: 22px;
+    width: auto;
+}
+
+.btn-ver-projeto button {
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.dot.active {
-    background-color: var(--color-primary);
+.btn-ver-projeto button:hover {
+    transform: scale(1.05);
+}
+
+.projeto-status {
+    font-weight: bold;
+    color: var(--color-tertiary);
+    margin-top: 10px;
 }
 
 /* ESTILO FORMULÁRIO */
@@ -409,13 +494,49 @@ form .btn-enviar {
     text-align: center;
 }
 
-form .btn-enviar input {
-    width: 120px;
+form .btn-enviar button {
+    height: 3rem;
+    width: 20rem;
     background-color: var(--color-primary);
     color: var(--color-quinary);
     font-weight: 700;
     cursor: pointer;
     transition: .3s;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+/* Estilos para as notificações */
+.notificacao {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.notificacao.mostrar {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notificacao.sucesso {
+    background-color: #7f5af0;
+}
+
+.notificacao.erro {
+    background-color: #e63946;
+}
+
+.notificacao.info {
+    background-color: #457b9d;
 }
 
 /* estilo do rodapé */
@@ -513,14 +634,23 @@ footer .copy {
         width: 100%;
     }
 
+    section.portfolio p {
+        color: var(--color-secondary);
+        text-align: center;
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+
     /* ESTILO ESPECIALIDADES */
     section.especialidades {
-        padding: 10px 10%;
-
+        padding: 10px 5%;
     }
 
     .especialidades .especialidades-box {
         margin-top: 15px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .especialidades .especialidades-box h3 {
@@ -529,7 +659,7 @@ footer .copy {
     }
 
     .especialidades .especialidades-box img {
-        margin-left: 25%;
+        padding-top: 20px;
         width: 50%;
         height: 50%;
     }
@@ -577,4 +707,13 @@ footer .copy {
     footer .line-footer {
         text-align: center;
     }
+
+    .text-mobile {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: bold;
+        color: var(--color-secondary);
+    }
+
 }
