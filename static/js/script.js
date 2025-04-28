@@ -148,8 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (formularioContato) {
         formularioContato.addEventListener("submit", function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Impede o envio normal do formulário
 
+            // Pegando os dados do formulário
             const nome = this.querySelector('input[name="nome"]').value;
             const email = this.querySelector('input[name="email"]').value;
             const telefone = this.querySelector('input[name="telefone"]').value;
@@ -157,20 +158,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 'textarea[name="mensagem"]'
             ).value;
 
+            // Verifica se os campos obrigatórios estão preenchidos
             if (!nome || !email || !mensagem) {
                 mostrarNotificacao(
-                    "Por favor, preencha todos os campos obrigatórios",
+                    "Por favor, preencha todos os campos obrigatórios.",
                     "erro"
                 );
                 return;
             }
 
+            // Criando o FormData com os dados do formulário
             const formData = new FormData();
             formData.append("nome", nome);
             formData.append("email", email);
             formData.append("telefone", telefone);
             formData.append("mensagem", mensagem);
 
+            // Envia os dados via fetch para a URL do Formspree
             fetch("https://formspree.io/f/mjkgnqjq", {
                 method: "POST",
                 body: formData,
@@ -181,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             "Mensagem enviada com sucesso!",
                             "sucesso"
                         );
-                        formularioContato.reset();
+                        formularioContato.reset(); // Limpa o formulário
                     } else {
                         mostrarNotificacao(
                             "Erro ao enviar a mensagem. Tente novamente.",
@@ -198,6 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Função para mostrar as notificações
     function mostrarNotificacao(mensagem, tipo = "info") {
         const notificacao = document.createElement("div");
         notificacao.className = `notificacao ${tipo}`;
@@ -205,15 +210,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.appendChild(notificacao);
 
+        // Animação para exibir a notificação
         setTimeout(() => {
             notificacao.classList.add("mostrar");
         }, 10);
 
+        // Remove a notificação após um tempo
         setTimeout(() => {
             notificacao.classList.remove("mostrar");
             setTimeout(() => {
                 document.body.removeChild(notificacao);
             }, 300);
-        }, 3000);
+        }, 5000); // A notificação ficará visível por 5 segundos
     }
 });
