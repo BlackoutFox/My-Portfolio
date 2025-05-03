@@ -50,20 +50,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-// Carregar Particles.js
-tsParticles.load("particles-js", {
-    fullScreen: { enable: false },
-    particles: {
-        number: { value: 60 },
-        size: { value: 3 },
-        move: { enable: true, speed: 1 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-    },
-    interactivity: {
-        events: {
-            onhover: { enable: true, mode: "repulse" },
-        },
-    },
-});
