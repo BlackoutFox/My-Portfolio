@@ -89,7 +89,6 @@ header>.interface {
     justify-content: space-between;
 }
 
-
 header a {
     color: var(--color-quaternary);
     text-decoration: none;
@@ -181,10 +180,7 @@ header nav.menu-desktop ul li {
     display: none;
 }
 
-
 /*  ESTILO TOPO DO SITE */
-
-
 section.topo-do-site {
     padding: 30px 4%;
 }
@@ -200,7 +196,6 @@ section.topo-do-site .flex {
     color: var(--color-tertiary);
     line-height: 40px;
 }
-
 
 .topo-do-site .txt-topo-site h1 span {
     color: var(--color-primary);
@@ -238,7 +233,6 @@ section.especialidades {
 section.especialidades .flex {
     gap: 40px;
     justify-content: center;
-
 }
 
 .especialidades .especialidades-box {
@@ -263,15 +257,9 @@ section.especialidades .flex {
     box-shadow: 0 0 15px var(--color-primary);
 }
 
-/* .especialidades .especialidades-box i {
-    font-size: 70px;
-    color: var(--color-primary);
-} */
-
 .especialidades .especialidades-box h3 {
     font-size: 28px;
     text-align: center;
-
 }
 
 .especialidades-box img {
@@ -588,12 +576,10 @@ footer .copy {
         top: 0;
         right: 0;
         height: 100vh;
-        /* Garante que ocupe toda a tela */
     }
 
     header {
         padding: 15px 4%;
-        /* Reduz o espaço em telas menores */
     }
 
     /* CLASSES GERAIS */
@@ -715,5 +701,4 @@ footer .copy {
         font-weight: bold;
         color: var(--color-secondary);
     }
-
 }

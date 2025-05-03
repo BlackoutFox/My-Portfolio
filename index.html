@@ -10,17 +10,10 @@
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
-        <!--FIM-->
-        <!-- ICONS -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
-        <!--FIM-->
-        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-        <!-- Partículas -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-        <!-- Swiper -->
         <script
             src="https://blackoutfox.github.io/My-Portfolio/static/js/script.js"
             defer
@@ -213,13 +206,6 @@
                                 voltado para trabalhadores autônomos.
                             </p>
                             <div class="btn-social">
-                                <!-- <a
-                                    href="https://www.instagram.com/p.petters/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    ><button>
-                                        <i class="bi bi-instagram"></i></button
-                                ></a> -->
                                 <a
                                     href="https://www.linkedin.com/in/pettersantos/"
                                     target="_blank"
@@ -437,8 +423,6 @@
                                 required
                             ></textarea>
                         </div>
-
-                        <!-- campo escondido para evitar bots -->
                         <input
                             type="text"
                             name="_honey"
@@ -450,12 +434,10 @@
                             name="_subject"
                             value="Nova mensagem do formulário!"
                         />
-
                         <div class="btn-enviar">
                             <button type="submit">ENVIAR</button>
                         </div>
                     </form>
-
                     <div class="notificacao sucesso" id="sucesso">
                         Mensagem enviada com sucesso!
                     </div>
@@ -476,11 +458,6 @@
                             />
                         </div>
                         <div class="btn-social">
-                            <!-- <a href="https://www.instagram.com/p.petters/"
-                            target="_blank" rel="noopener noreferrer"
-                                ><button>
-                                    <i class="bi bi-instagram"></i></button
-                            ></a> -->
                             <a
                                 href="https://www.linkedin.com/in/pettersantos/"
                                 target="_blank"
@@ -521,6 +498,19 @@
             </div>
         </footer>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.3/tsparticles.bundle.min.js"></script>
+    <script>
+        tsParticles.load("particles-js", {
+            particles: {
+                number: { value: 80 },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: { enable: true, speed: 2 },
+            },
+        });
+    </script>
     <script>
         document
             .getElementById("form-contato")
@@ -530,10 +520,13 @@
                 const form = e.target;
                 const data = new FormData(form);
 
-                fetch("https://formsubmit.co/ajax/skydevs.devs@outlook.com", {
-                    method: "POST",
-                    body: data,
-                })
+                fetch(
+                    "https://formsubmit.co/ajax/petter.santos@outlook.com.br",
+                    {
+                        method: "POST",
+                        body: data,
+                    }
+                )
                     .then((response) => {
                         if (response.ok) {
                             document
