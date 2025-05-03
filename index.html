@@ -437,10 +437,31 @@
                                 required
                             ></textarea>
                         </div>
+
+                        <!-- campo escondido para evitar bots -->
+                        <input
+                            type="text"
+                            name="_honey"
+                            style="display: none"
+                        />
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Nova mensagem do formulário!"
+                        />
+
                         <div class="btn-enviar">
                             <button type="submit">ENVIAR</button>
                         </div>
                     </form>
+
+                    <div class="notificacao sucesso" id="sucesso">
+                        Mensagem enviada com sucesso!
+                    </div>
+                    <div class="notificacao erro" id="erro">
+                        Erro ao enviar mensagem.
+                    </div>
                 </div>
             </section>
         </main>
@@ -504,38 +525,38 @@
         document
             .getElementById("form-contato")
             .addEventListener("submit", function (e) {
-                e.preventDefault();
-                const form = e.target;
-                const formData = new FormData(form);
+                e.preventDefault(); // impede o envio padrão
 
-                fetch(form.action, {
-                    method: form.method,
-                    body: formData,
+                const form = e.target;
+                const data = new FormData(form);
+
+                fetch("https://formsubmit.co/ajax/skydevs.devs@outlook.com", {
+                    method: "POST",
+                    body: data,
                 })
-                    .then((response) => response.text())
-                    .then((responseText) => {
-                        mostrarNotificacao(
-                            responseText === "sucesso"
-                                ? "Mensagem enviada com sucesso!"
-                                : "Erro ao enviar mensagem.",
-                            responseText === "sucesso" ? "sucesso" : "erro"
-                        );
-                        if (responseText === "sucesso") form.reset();
+                    .then((response) => {
+                        if (response.ok) {
+                            document
+                                .getElementById("sucesso")
+                                .classList.add("mostrar");
+                            form.reset();
+                        } else {
+                            throw new Error("Erro no envio");
+                        }
                     })
                     .catch((error) => {
-                        mostrarNotificacao("Erro ao enviar mensagem.", "erro");
+                        document
+                            .getElementById("erro")
+                            .classList.add("mostrar");
+                        console.error("Erro:", error);
                     });
-            });
 
-        function mostrarNotificacao(texto, tipo) {
-            const notificacao = document.createElement("div");
-            notificacao.className = `notificacao mostrar ${tipo}`;
-            notificacao.textContent = texto;
-            document.body.appendChild(notificacao);
-            setTimeout(() => {
-                notificacao.classList.remove("mostrar");
-                setTimeout(() => notificacao.remove(), 300);
-            }, 4000);
-        }
+                setTimeout(() => {
+                    document
+                        .getElementById("sucesso")
+                        .classList.remove("mostrar");
+                    document.getElementById("erro").classList.remove("mostrar");
+                }, 5000);
+            });
     </script>
 </html>
